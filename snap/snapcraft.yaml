@@ -23,6 +23,9 @@ parts:
       ./build-ivp.sh
     install: |
       cp -r bin $SNAPCRAFT_PART_INSTALL/
+      mkdir -p $SNAPCRAFT_PART_INSTALL/lib
+      cp build/MOOS/MOOSGeodesy/lib/libMOOSGeodesy.so $SNAPCRAFT_PART_INSTALL/lib
+      cp lib/libhenrik_anneal.so $SNAPCRAFT_PART_INSTALL/lib
     build-packages:
       - g++
       - libfltk1.3-dev
